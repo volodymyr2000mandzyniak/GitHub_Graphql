@@ -7,7 +7,6 @@ module Types
     field :repositories, [RepositoryType], null: true
 
     def repositories
-      # Додайте логіку для отримання репозиторіїв користувача
       GithubService.repositories(object.github_login)
     end
   end

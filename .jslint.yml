@@ -1,0 +1,9 @@
+# .jslint.yml
+
+config:
+  require:
+    - 'jshint'
+
+execute:
+  errors:
+    missing_semicolon: "Line not terminated by semicolon."

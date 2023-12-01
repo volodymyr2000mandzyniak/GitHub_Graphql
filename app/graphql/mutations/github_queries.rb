@@ -1,5 +1,3 @@
-# app/graphql/mutations/github_queries.rb
-
 module Mutations
   class GithubQueries < BaseMutation
     argument :login, String, required: true
