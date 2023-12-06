@@ -1,8 +1,20 @@
+
+# Включити лише ті копи, які вам потрібні
 require:
   - rubocop-rails
+  - rubocop-performance
 
 AllCops:
   TargetRubyVersion: 3.1
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/**/*'
 
+# Налаштування для Rails
 Rails:
+  Enabled: true
+
+# Налаштування для Performance копів
+# .rubocop.yml
+Performance/Size:
   Enabled: true

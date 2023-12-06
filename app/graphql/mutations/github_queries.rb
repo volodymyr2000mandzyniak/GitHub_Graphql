@@ -6,7 +6,7 @@ module Mutations
     field :errors, [String], null: false
 
     def resolve(login:)
-        user_info = GithubService.user_info(login)
+      user_info = GithubService.user_info(login)
 
       if user_info.present?
         { user: OpenStruct.new(github_login: user_info['login'], name: user_info['name']), errors: [] }

@@ -2,22 +2,15 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: postgres
-  password: ShowYour1D!
-  host: localhost
-  port: 5432
-
+  username: <%= Figaro.env.POSTGRES_USERNAME %>
+  password: <%= Figaro.env.POSTGRES_PASSWORD %>
+  host: <%= Figaro.env.POSTGRES_HOST %>
+  port: <%= Figaro.env.POSTGRES_PORT %>
 
 development:
   <<: *default
-  database: postgres_development
-  username: postgres
-  password: ShowYour1D!
-
+  database: <%= Figaro.env.POSTGRES_DATABASE %>
 
 test:
   <<: *default
-  database: postgres_test
-  username: postgres
-  password: ShowYour1D!
-
+  database: <%= Figaro.env.POSTGRES_DATABASE %>
