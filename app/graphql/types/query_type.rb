@@ -7,7 +7,16 @@ module Types
 
     def user(login:)
       user_info = GithubService.user_info(login)
-      OpenStruct.new(github_login: user_info['login'], name: user_info['name'])
+
+      if user_info.present?
+        OpenStruct.new(github_login: user_info['login'], name: user_info['name'])
+      else
+        Rails.logger.error "User not found for login: #{login}"
+        nil
+      end
+    rescue StandardError => e
+      Rails.logger.error "Error fetching GitHub user info: #{e.message}"
+      nil
     end
   end
 end

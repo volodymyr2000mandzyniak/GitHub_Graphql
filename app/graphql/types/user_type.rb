@@ -1,5 +1,3 @@
-# app/graphql/types/user_type.rb
-
 module Types
   class UserType < Types::BaseObject
     field :github_login, String, null: true

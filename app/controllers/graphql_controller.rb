@@ -26,7 +26,7 @@ class GraphqlController < ApplicationController
     when Hash
       variables_param
     when ActionController::Parameters
-      variables_param.to_unsafe_hash 
+      variables_param.to_unsafe_hash
     when nil
       {}
     else

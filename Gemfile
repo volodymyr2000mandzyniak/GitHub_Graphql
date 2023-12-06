@@ -11,6 +11,14 @@ gem "webmock"
 gem "jslint_on_rails"
 gem "rubocop"
 
+
+
+gem 'bootstrap', '~> 5.3', '>= 5.3.2'
+gem 'jquery-rails'
+gem 'sassc-rails', '~> 2.1'
+
+
+
 gem "puma", "~> 5.0"
 gem "importmap-rails"
 gem "turbo-rails"
