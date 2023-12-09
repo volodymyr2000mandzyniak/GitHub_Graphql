@@ -1,20 +1,40 @@
-
-# Включити лише ті копи, які вам потрібні
 require:
-  - rubocop-rails
   - rubocop-performance
+  # - rubocop-rspec
+  - rubocop-rails
 
 AllCops:
-  TargetRubyVersion: 3.1
+  TargetRubyVersion: 3.0
+  NewCops: enable
   Exclude:
-    - 'vendor/**/*'
-    - 'db/**/*'
+    - vendor/**/*
+    - db/**/*
+    - bin/**/*
+    - vendor/**/*
+    - tmp/**/*
+    - spec
 
-# Налаштування для Rails
-Rails:
-  Enabled: true
+Layout/LineLength:
+  Max: 100
 
-# Налаштування для Performance копів
-# .rubocop.yml
-Performance/Size:
-  Enabled: true
+Metrics/ClassLength:
+  Max: 150
+
+Metrics/MethodLength:
+  Max: 20
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+# Explicitness is better than implicitness
+Style/RedundantArgument:
+  Enabled: false
+
+Naming/InclusiveLanguage:
+  Enabled: false

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GithubService
   include HTTParty
   base_uri 'https://api.github.com'

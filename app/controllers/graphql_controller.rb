@@ -1,4 +1,8 @@
+# frozen_string_literal: true
+
+# Controller for handling GraphQL queries and mutations
 class GraphqlController < ApplicationController
+  
   def execute
     variables = prepare_variables(params[:variables])
     query = params[:query]

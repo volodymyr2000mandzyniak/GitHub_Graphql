@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module Mutations
+  # Mutation for querying GitHub information
   class GithubQueries < BaseMutation
     argument :login, String, required: true
 
@@ -9,7 +12,8 @@ module Mutations
       user_info = GithubService.user_info(login)
 
       if user_info.present?
-        { user: OpenStruct.new(github_login: user_info['login'], name: user_info['name']), errors: [] }
+        user = Types::UserType.new(github_login: user_info['login'], name: user_info['name'])
+        { user:, errors: [] }
       else
         { user: nil, errors: ['User not found.'] }
       end
