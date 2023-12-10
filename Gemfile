@@ -50,3 +50,8 @@ group :test do
   gem 'selenium-webdriver'
 end
 
+group :production do
+  gem 'pg', '~> 1.1'
+  gem 'graphql'
+  gem 'httparty'
+end
