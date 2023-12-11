@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 ruby '3.1.0'
 
 # System
-gem 'pg', '~> 1.1'
 gem 'figaro'
 
 gem 'puma', '~> 5.0'
@@ -51,3 +50,6 @@ group :test do
 end
 
 
+group :production do
+  gem 'pg', '~> 1.1'
+end
