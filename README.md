@@ -10,7 +10,7 @@ GitHub_Graphql - це Ruby on Rails додаток, який дозволяє о
 Введіть DHH:
 GitHub Login: DHH
 Name: David Heinemeier Hansson
-Repositories:
+  Repositories:
 1. actioncable
 2. actionmailbox
 3. actionpack
